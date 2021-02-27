@@ -18,7 +18,7 @@ author: Author
 email: theoffshoot21@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   We are a cohort of undergraduate students at Cornell who like to write. 
-baseurl: "/Onassis" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 google_analytics: 'UA-131540516-1' # change this to your GA key
 url: "annabelli21.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 include: ["_pages"]
