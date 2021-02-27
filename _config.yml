@@ -26,6 +26,8 @@ collections_dir: _collections
 twitter_username: jekyllrb
 github_username:  jekyll
 
+remote_theme: ohduran/onassis
+
 # Build settings
 markdown: kramdown
 plugins:
