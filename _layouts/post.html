@@ -1,10 +1,37 @@
 ---
-layout: default
+layout: page
 ---
-<div class="jumbotron" style="background-image: url({{ page.image }}); background-size: cover;">
-  <h1 class="col-md-5 mx-auto mb-5 d-flex justify-content-center text-light">{{ page.title }}</h1>
-  <p class="lead text-light">{{ page.description }}</p>
+
+<h1><b>{{ page.title }}</b></h1>
+
+<p class="post-metadata text-muted">
+  {{ page.date | date_to_long_string }} -  
+  <b>
+  {%- assign words = content | number_of_words -%}
+  {%- if words < 360 -%}
+    less than 1 min read time
+  {%- else -%}
+    {{ words | divided_by: 180 }} mins read time
+  {%- endif -%}
+  </b>
+
+  <br>
+
+  {%- if page.tags != empty -%}
+    Tags: 
+    {% for tag in page.tags %}
+    <a class="text-decoration-none no-underline" href="{{ tag | slugify | prepend:'/blog/tags#' | relative_url }}">
+      <span class="tag badge badge-pill text-primary border border-primary">{{ tag }}</span>
+    </a>
+    {% endfor %}
+  {%- endif -%}
+
+</p>
+
+{{ content }}
+
+{% if page.comments %}
+<div class="pt-5">
+  {% include blog/disqus.html %}
 </div>
-<article class="container">
-  {{ content }}
-</article>
+{% endif %}
